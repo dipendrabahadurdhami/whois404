@@ -1,6 +1,6 @@
 import Sidebar from "./components/Sidebar";
 import Banner from "./components/Banner";
-import { About, Experience, Projects, Skills, Education, Footer } from "./components/Sections";
+import { About, Experience, Projects, Skills, Education, Contact } from "./components/Sections";
 
 export default function App() {
   return (
@@ -18,7 +18,7 @@ export default function App() {
             <Projects />
             <Skills />
             <Education />
-            <Footer />
+            <Contact />
           </main>
         </div>
       </div>

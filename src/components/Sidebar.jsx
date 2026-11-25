@@ -11,6 +11,7 @@ const nav = [
   ["projects", "Projects"],
   ["skills", "Skills"],
   ["education", "Education"],
+  ["contact", "Contact"],
 ];
 
 function useActive(ids) {

@@ -1,4 +1,6 @@
 import Section, { Tags } from "./Section";
+import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa6";
+import { LuMail, LuPhone, LuMapPin } from "react-icons/lu";
 import { Arrow, Lock, Globe, TechIcon } from "./icons";
 import { about, experience, projects, skills, education, profile } from "../data";
 
@@ -141,16 +143,55 @@ export function Education() {
   );
 }
 
-export function Footer() {
+const subject = encodeURIComponent("Hello Dipendra");
+
+export function Contact() {
+  const reach = [
+    { label: profile.email, href: `mailto:${profile.email}?subject=${subject}`, Icon: LuMail },
+    { label: profile.phone, href: `tel:${profile.phone.replace(/\s/g, "")}`, Icon: LuPhone },
+    { label: profile.location, Icon: LuMapPin },
+  ];
+  const online = [
+    { label: "GitHub", href: profile.links.github, Icon: FaGithub },
+    { label: "LinkedIn", href: profile.links.linkedin, Icon: FaLinkedin },
+    { label: "YouTube", href: profile.links.youtube, Icon: FaYoutube },
+  ];
+  const tile = "flex items-center gap-2.5 rounded-md border border-line text-sm leading-tight";
+  const link = "transition hover:border-accent hover:text-accent";
+
+  const List = ({ items, cols, span }) => (
+    <ul className={`grid gap-2 ${cols}`}>
+      {items.map(({ label, href, Icon }) => (
+        <li key={label} className={`${tile} ${href ? link : ""} ${span ? "[&:nth-child(odd):last-child]:col-span-2" : ""}`}>
+          {href ? (
+            <a href={href} {...(href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})} className="flex w-full items-center gap-2.5 px-3 py-2.5">
+              <span className="text-accent"><Icon size={18} aria-hidden="true" /></span>{label}
+            </a>
+          ) : (
+            <span className="flex w-full items-center gap-2.5 px-3 py-2.5">
+              <span className="text-accent"><Icon size={18} aria-hidden="true" /></span>{label}
+            </span>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+
   return (
-    <footer className="space-y-1 pb-16 text-sm text-muted lg:pb-24">
-      <p className="font-medium text-fg">Want to work together?</p>
-      <p>
-        <a href={`mailto:${profile.email}`} className="text-accent hover:underline">{profile.email}</a>
-        <span className="px-2">·</span>
-        <a href={`tel:${profile.phone.replace(/\s/g, "")}`} className="hover:text-accent">{profile.phone}</a>
+    <Section id="contact" title="Contact">
+      <p className="justify-text mb-8 leading-relaxed text-muted">
+        Have a product to build or a team to lead? I'm open to client projects, engineering collaborations and technical leadership opportunities.
       </p>
-      <p className="pt-3 font-mono text-xs">Designed and built by Dipendra Dhami with React and Tailwind CSS.</p>
-    </footer>
+      <dl className="space-y-6 pb-8 lg:pb-16">
+        <div className="grid gap-2 sm:grid-cols-8 sm:gap-6">
+          <dt className="mt-1 font-mono text-xs uppercase tracking-wide text-muted sm:col-span-2">Reach me</dt>
+          <dd className="sm:col-span-6"><List items={reach} cols="grid-cols-1" /></dd>
+        </div>
+        <div className="grid gap-2 sm:grid-cols-8 sm:gap-6">
+          <dt className="mt-1 font-mono text-xs uppercase tracking-wide text-muted sm:col-span-2">Online</dt>
+          <dd className="sm:col-span-6"><List items={online} cols="grid-cols-2" span /></dd>
+        </div>
+      </dl>
+    </Section>
   );
 }
