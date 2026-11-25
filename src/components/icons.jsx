@@ -6,7 +6,7 @@ import {
 import {
   LuMail, LuSun, LuMoon, LuArrowUpRight, LuLock, LuLayers, LuUsers, LuGitPullRequest,
   LuRocket, LuShieldCheck, LuDatabase, LuWorkflow, LuGlobe, LuSmartphone, LuReceipt,
-  LuBrain, LuClapperboard, LuBraces, LuDownload,
+  LuBrain, LuClapperboard, LuBraces, LuDownload, LuMap,
 } from "react-icons/lu";
 
 export const GitHub = () => <FaGithub size={22} aria-hidden="true" />;
@@ -28,7 +28,7 @@ const map = {
   "REST API Design": LuWorkflow, "CI/CD": LuRocket, "Architecture": LuLayers, "Team Leadership": LuUsers,
   "Code Review": LuGitPullRequest, "Release Management": LuRocket, "Secure Development": LuShieldCheck,
   "Database Design": LuDatabase, "Web": LuGlobe, "Mobile": LuSmartphone, "Billing": LuReceipt,
-  "Machine learning": LuBrain,
+  "Machine learning": LuBrain, "Maps": LuMap,
 };
 
 export function TechIcon({ name, size = 14 }) {

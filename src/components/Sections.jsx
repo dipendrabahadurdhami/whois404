@@ -68,6 +68,13 @@ export function Projects() {
                     {p.url && <Arrow className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />}
                   </h4>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{p.text}</p>
+                  {p.highlights.length > 0 && (
+                    <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted">
+                      {p.highlights.map((h) => (
+                        <li key={h} className="flex gap-3"><span className="mt-2 h-px w-3 shrink-0 bg-muted" />{h}</li>
+                      ))}
+                    </ul>
+                  )}
                   {!p.url && (
                     <p className="mt-2 inline-flex items-center gap-1.5 font-mono text-xs text-muted">
                       <Lock /> Private project. Source and demo available on request.
