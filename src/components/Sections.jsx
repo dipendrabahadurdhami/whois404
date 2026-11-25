@@ -8,7 +8,7 @@ const hoverItem = "lg:group-hover/list:opacity-50 lg:hover:!opacity-100 transiti
 export function About() {
   return (
     <Section id="about" title="About">
-      <div className="space-y-4 leading-relaxed text-muted">
+      <div className="justify-text space-y-4 leading-relaxed text-muted">
         {about.map((p) => <p key={p}>{p}</p>)}
       </div>
     </Section>
@@ -34,7 +34,7 @@ export function Experience() {
                     <span className="text-accent">{job.company}</span>
                   )}
                 </h4>
-                <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted">
+                <ul className="justify-text mt-3 space-y-2 text-sm leading-relaxed text-muted">
                   {job.points.map((p) => (
                     <li key={p} className="flex gap-3"><span className="mt-2 h-px w-3 shrink-0 bg-muted" />{p}</li>
                   ))}
@@ -67,9 +67,9 @@ export function Projects() {
                     {p.name}
                     {p.url && <Arrow className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />}
                   </h4>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{p.text}</p>
+                  <p className="justify-text mt-2 text-sm leading-relaxed text-muted">{p.text}</p>
                   {p.highlights.length > 0 && (
-                    <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted">
+                    <ul className="justify-text mt-3 space-y-2 text-sm leading-relaxed text-muted">
                       {p.highlights.map((h) => (
                         <li key={h} className="flex gap-3"><span className="mt-2 h-px w-3 shrink-0 bg-muted" />{h}</li>
                       ))}
