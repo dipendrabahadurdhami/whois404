@@ -48,7 +48,7 @@ export const experience = [
       "Maintained WordPress sites: bug fixes, performance work and updates.",
       "Worked with the team on real client projects and helped with promotional video editing.",
     ],
-    tech: ["JavaScript", "PHP", "WordPress"],
+    tech: ["JavaScript", "PHP", "WordPress", "Video editing"],
   },
 ];
 
@@ -64,7 +64,7 @@ export const projects = [
       "Expert directory with booked meetings, video courses and live classes using Zoom, Google Meet and YouTube recordings.",
       "Nepali and English interface.",
     ],
-    tech: ["Zoom", "Google Meet", "YouTube API"],
+    tech: ["Zoom", "Google Meet", "YouTube API", "Nepali & English"],
   },
   {
     name: "Sheetal Property",
@@ -77,7 +77,7 @@ export const projects = [
       "Agencies can post listings, see buyer requests matched to demand and get leads by phone.",
       "Built-in calculators: home loan EMI, land units, land price, property tax, rental yield, rent vs buy and affordability.",
     ],
-    tech: ["Web", "Maps"],
+    tech: ["Search & filters", "Maps", "Calculators", "Agency listings"],
   },
   {
     name: "eRastriya",
@@ -90,7 +90,7 @@ export const projects = [
       "Reader tools: e-paper, radio, Preeti to Unicode converter and date converter.",
       "Reader login and ad placements for sponsors.",
     ],
-    tech: ["React"],
+    tech: ["React", "Nepali & English", "Market data", "Video news"],
   },
   {
     name: "Ramro Pasal",
@@ -109,7 +109,7 @@ export const projects = [
       "Services listed: website development, mobile apps, SEO, ad boosting, branding and design, and video editing.",
       "Product and marketing sections, Google sign-in, live chat and a contact-sales flow.",
     ],
-    tech: ["Web"],
+    tech: ["Web", "Google Sign-In", "Live chat", "SEO"],
   },
   {
     name: "PlusCals",
@@ -119,14 +119,14 @@ export const projects = [
       "Multi-role access, staff attendance and a Nepali and English interface.",
       "Being built to meet IRD e-billing requirements.",
     ],
-    tech: ["Web", "Mobile", "Billing"],
+    tech: ["Web", "Mobile", "Billing", "Nepali & English"],
   },
   {
     name: "Signify",
     kind: "College project",
     text: "An accessible sign interpreter application that uses basic machine learning concepts to support hearing-impaired users.",
     highlights: [],
-    tech: ["Machine learning"],
+    tech: ["Machine learning", "Accessibility", "Sign language", "Team project"],
   },
 ];
 

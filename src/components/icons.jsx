@@ -1,12 +1,13 @@
 import { FaGithub, FaLinkedin, FaYoutube, FaJava } from "react-icons/fa6";
 import {
   SiReact, SiNodedotjs, SiExpress, SiMongodb, SiMysql, SiJavascript, SiPhp,
-  SiWordpress, SiGit, SiGithub, SiBurpsuite, SiZoom, SiGooglemeet, SiYoutube,
+  SiWordpress, SiGit, SiGithub, SiBurpsuite, SiZoom, SiGooglemeet, SiYoutube, SiGoogle,
 } from "react-icons/si";
 import {
   LuMail, LuSun, LuMoon, LuArrowUpRight, LuLock, LuLayers, LuUsers, LuGitPullRequest,
   LuRocket, LuShieldCheck, LuDatabase, LuWorkflow,
-  LuBrain, LuClapperboard, LuBraces, LuDownload, LuMonitor, LuReceiptText, LuMapPin, LuTabletSmartphone,
+  LuBrain, LuClapperboard, LuBraces, LuDownload, LuMonitor, LuReceiptText, LuMapPin, LuTabletSmartphone, LuLanguages, LuMessageCircle,
+  LuSearch, LuCalculator, LuBuilding2, LuTrendingUp, LuVideo, LuAccessibility, LuHand,
 } from "react-icons/lu";
 
 export const GitHub = () => <FaGithub size={22} aria-hidden="true" />;
@@ -28,7 +29,10 @@ const map = {
   "REST API Design": LuWorkflow, "CI/CD": LuRocket, "Architecture": LuLayers, "Team Leadership": LuUsers,
   "Code Review": LuGitPullRequest, "Release Management": LuRocket, "Secure Development": LuShieldCheck,
   "Database Design": LuDatabase, "Web": LuMonitor, "Mobile": LuTabletSmartphone, "Billing": LuReceiptText,
-  "Machine learning": LuBrain, "Maps": LuMapPin,
+  "Machine learning": LuBrain, "Maps": LuMapPin, "Nepali & English": LuLanguages, "Google Sign-In": SiGoogle, "Live chat": LuMessageCircle,
+  "SEO": LuSearch, "Search & filters": LuSearch, "Calculators": LuCalculator, "Agency listings": LuBuilding2,
+  "Market data": LuTrendingUp, "Video news": LuVideo, "Accessibility": LuAccessibility, "Sign language": LuHand,
+  "Team project": LuUsers, "Video editing": LuClapperboard,
 };
 
 export function TechIcon({ name, size = 14 }) {
