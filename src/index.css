@@ -16,6 +16,7 @@
 
 html { scroll-behavior: smooth; }
 .justify-text { text-align: justify; text-justify: inter-word; hyphens: auto; -webkit-hyphens: auto; }
+.justify-text.no-hyphens { hyphens: manual; -webkit-hyphens: manual; }
 body { @apply bg-bg font-sans text-fg antialiased; transition: background-color .3s; }
 ::selection { background: rgb(var(--accent)); color: rgb(var(--light)); }
 

@@ -129,8 +129,10 @@ export function Education() {
             <p className="mt-1 font-mono text-xs uppercase tracking-wide text-muted sm:col-span-2">{e.range}</p>
             <div className="sm:col-span-6">
               <h4 className="font-medium leading-snug">{e.title}</h4>
-              <p className="mt-1 text-sm text-muted">{e.place}</p>
-              {e.note && <p className="mt-1 text-sm text-accent">{e.note}</p>}
+              <p className="justify-text mt-1 text-sm leading-relaxed text-muted">
+                {e.place}
+                {e.note && <>. <span className="text-accent">{e.note}</span></>}
+              </p>
             </div>
           </li>
         ))}

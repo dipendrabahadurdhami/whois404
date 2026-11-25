@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { profile } from "../data";
 import { GitHub, LinkedIn, YouTube, Sun, Moon, Download } from "./icons";
 import ContactMenu from "./ContactMenu";
+import FitText from "./FitText";
 
 const nav = [
   ["about", "About"],
@@ -70,7 +71,8 @@ export default function Sidebar() {
   ];
 
   return (
-    <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[46%] lg:flex-col lg:justify-between lg:gap-6 lg:py-16">
+    <header className="lg:sticky lg:top-0 lg:h-screen lg:w-[46%] lg:py-16">
+      <div className="w-fit max-w-full lg:flex lg:h-full lg:flex-col lg:justify-between lg:gap-6">
       <div>
         <img
           src={profile.photo}
@@ -80,10 +82,10 @@ export default function Sidebar() {
           className="mb-5 h-20 w-20 rounded-full object-cover ring-2 ring-line"
         />
         <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-          <a href="#">{profile.name}</a>
+          <a href="#"><FitText>{profile.name}</FitText></a>
         </h1>
         <h2 className="mt-3 text-lg font-medium sm:text-xl">{profile.title}</h2>
-        <p className="mt-4 max-w-xs leading-relaxed text-muted">{profile.tagline}</p>
+        <p className="justify-text no-hyphens mt-4 w-0 min-w-full leading-relaxed text-muted">{profile.tagline}</p>
         <p className="mt-4 font-mono text-xs text-muted">{profile.location}</p>
 
         <nav className="mt-10 hidden lg:block" aria-label="Sections">
@@ -104,13 +106,13 @@ export default function Sidebar() {
         <a
           href={profile.cv}
           download
-          className="mt-8 inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2 text-sm font-medium text-light transition hover:opacity-90 lg:mt-8"
+          className="mt-8 flex w-full items-center justify-center gap-2 rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-light transition hover:opacity-90 lg:mt-8"
         >
           <Download /> Download CV
         </a>
       </div>
 
-      <ul className="mt-8 flex items-center gap-5 lg:mt-0" aria-label="Social">
+      <ul className="mt-8 flex w-full items-center justify-between lg:mt-0" aria-label="Social">
         {social.map(([href, label, icon]) => (
           <li key={label}>
             <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" aria-label={label} title={label} className="block text-muted transition hover:text-accent">
@@ -122,6 +124,7 @@ export default function Sidebar() {
         <li><ContactMenu type="phone" /></li>
         <li><Theme /></li>
       </ul>
+      </div>
     </header>
   );
 }
