@@ -1,3 +1,5 @@
+import { TechIcon } from "./icons";
+
 export default function Section({ id, title, children }) {
   return (
     <section id={id} aria-label={title} className="mb-20 scroll-mt-16 lg:mb-28 lg:scroll-mt-24">
@@ -13,7 +15,10 @@ export function Tags({ items }) {
   return (
     <ul className="mt-3 flex flex-wrap gap-2">
       {items.map((t) => (
-        <li key={t} className="rounded-full bg-accent/10 px-3 py-1 font-mono text-xs text-accent">{t}</li>
+        <li key={t} className="inline-flex items-center gap-1.5 rounded-md border border-line px-2.5 py-1 font-mono text-xs text-muted">
+          <TechIcon name={t} />
+          {t}
+        </li>
       ))}
     </ul>
   );

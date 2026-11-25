@@ -13,9 +13,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <script>
-      try {
-        if (localStorage.getItem("theme") === "light") document.documentElement.classList.remove("dark");
-      } catch (e) {}
+      // Theme: saved choice wins, otherwise visitor's local time (light 06:00-17:59).
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem("theme"); } catch (e) {}
+        if (!t) { var h = new Date().getHours(); t = h >= 6 && h < 18 ? "light" : "dark"; }
+        document.documentElement.classList.toggle("dark", t === "dark");
+      })();
     </script>
   </head>
   <body>

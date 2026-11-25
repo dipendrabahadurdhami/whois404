@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { profile } from "../data";
-import { GitHub, LinkedIn, YouTube, Mail, Sun, Moon } from "./icons";
+import { GitHub, LinkedIn, YouTube, Mail, Sun, Moon, Download } from "./icons";
 
 const nav = [
   ["about", "About"],
@@ -23,16 +23,38 @@ function useActive(ids) {
   return active;
 }
 
+// Visitor's local time decides the default: light 06:00-17:59, dark otherwise.
+const autoTheme = () => {
+  const h = new Date().getHours();
+  return h >= 6 && h < 18 ? "light" : "dark";
+};
+const saved = () => {
+  try { return localStorage.getItem("theme"); } catch (e) { return null; }
+};
+const apply = (t) => document.documentElement.classList.toggle("dark", t === "dark");
+
 function Theme() {
   const [dark, setDark] = useState(() => document.documentElement.classList.contains("dark"));
+
+  useEffect(() => {
+    const tick = () => {
+      if (saved()) return;
+      const t = autoTheme();
+      apply(t);
+      setDark(t === "dark");
+    };
+    const id = setInterval(tick, 60000);
+    return () => clearInterval(id);
+  }, []);
+
   const toggle = () => {
-    const next = !dark;
-    document.documentElement.classList.toggle("dark", next);
-    try { localStorage.setItem("theme", next ? "dark" : "light"); } catch (e) {}
-    setDark(next);
+    const next = dark ? "light" : "dark";
+    apply(next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+    setDark(!dark);
   };
   return (
-    <button onClick={toggle} aria-label="Toggle theme" className="text-muted transition hover:text-accent">
+    <button onClick={toggle} aria-label="Switch between light and dark theme" title="Switch theme" className="text-muted transition hover:text-accent">
       {dark ? <Sun /> : <Moon />}
     </button>
   );
@@ -82,9 +104,9 @@ export default function Sidebar() {
         <a
           href={profile.cv}
           download
-          className="mt-8 inline-flex items-center rounded-md bg-accent px-4 py-2 text-sm font-medium text-white transition hover:opacity-90 lg:mt-8"
+          className="mt-8 inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2 text-sm font-medium text-white transition hover:opacity-90 lg:mt-8"
         >
-          Download CV
+          <Download /> Download CV
         </a>
       </div>
 

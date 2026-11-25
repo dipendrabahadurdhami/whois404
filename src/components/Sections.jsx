@@ -1,5 +1,5 @@
 import Section, { Tags } from "./Section";
-import { Arrow } from "./icons";
+import { Arrow, Lock, TechIcon } from "./icons";
 import { about, experience, projects, skills, education, profile } from "../data";
 
 const hoverList = "group/list";
@@ -68,6 +68,11 @@ export function Projects() {
                     {p.url && <Arrow className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />}
                   </h4>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{p.text}</p>
+                  {!p.url && (
+                    <p className="mt-2 inline-flex items-center gap-1.5 font-mono text-xs text-muted">
+                      <Lock /> Private project. Source and demo available on request.
+                    </p>
+                  )}
                   <Tags items={p.tech} />
                 </div>
               </Tag>
@@ -89,7 +94,16 @@ export function Skills() {
         {skills.map((s) => (
           <div key={s.group} className="grid gap-2 sm:grid-cols-8 sm:gap-6">
             <dt className="mt-1 font-mono text-xs uppercase tracking-wide text-muted sm:col-span-2">{s.group}</dt>
-            <dd className="text-sm leading-relaxed sm:col-span-6">{s.items.join("  ·  ")}</dd>
+            <dd className="sm:col-span-6">
+              <ul className="flex flex-wrap gap-2">
+                {s.items.map((i) => (
+                  <li key={i} className="inline-flex items-center gap-2 rounded-md border border-line px-3 py-1.5 text-sm">
+                    <TechIcon name={i} size={16} />
+                    {i}
+                  </li>
+                ))}
+              </ul>
+            </dd>
           </div>
         ))}
       </dl>
