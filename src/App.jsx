@@ -10,7 +10,7 @@ export default function App() {
       <div className="mx-auto max-w-screen-xl px-6 py-12 md:px-12 md:py-16 lg:px-24 lg:py-0">
         <div className="lg:flex lg:justify-between lg:gap-4">
           <Sidebar />
-          <main className="pt-16 lg:w-[52%] lg:py-16">
+          <main className="pt-16 lg:w-[52%] lg:pb-16 lg:pt-[175px]">
             <About />
             <Experience />
             <Projects />

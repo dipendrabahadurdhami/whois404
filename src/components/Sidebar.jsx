@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { profile } from "../data";
-import { GitHub, LinkedIn, YouTube, Mail, Sun, Moon, Download } from "./icons";
+import { GitHub, LinkedIn, YouTube, Sun, Moon, Download } from "./icons";
+import ContactMenu from "./ContactMenu";
 
 const nav = [
   ["about", "About"],
@@ -66,7 +67,6 @@ export default function Sidebar() {
     [profile.links.github, "GitHub", <GitHub />],
     [profile.links.linkedin, "LinkedIn", <LinkedIn />],
     [profile.links.youtube, "YouTube", <YouTube />],
-    [`mailto:${profile.email}`, "Email", <Mail />],
   ];
 
   return (
@@ -118,6 +118,8 @@ export default function Sidebar() {
             </a>
           </li>
         ))}
+        <li><ContactMenu type="email" /></li>
+        <li><ContactMenu type="phone" /></li>
         <li><Theme /></li>
       </ul>
     </header>
