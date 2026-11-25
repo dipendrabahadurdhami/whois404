@@ -23,7 +23,7 @@ export default function App() {
               alt=""
               width="1632"
               height="240"
-              className={`${mode} mb-8 h-20 w-full rounded-lg border border-line object-cover [object-position:65%_center] lg:absolute lg:right-0 lg:top-16 lg:mb-0 lg:w-[50%]`}
+              className={`${mode} mb-8 h-20 w-full rounded-lg object-cover [object-position:65%_center] lg:absolute lg:right-0 lg:top-16 lg:mb-0 lg:w-[50%]`}
             />
           ))}
           <Sidebar />
