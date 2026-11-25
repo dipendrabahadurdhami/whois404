@@ -7,7 +7,7 @@ import {
   LuMail, LuSun, LuMoon, LuArrowUpRight, LuLock, LuLayers, LuUsers, LuGitPullRequest,
   LuRocket, LuShieldCheck, LuDatabase, LuWorkflow,
   LuBrain, LuClapperboard, LuBraces, LuDownload, LuMonitor, LuReceiptText, LuMapPin, LuTabletSmartphone, LuLanguages, LuMessageCircle,
-  LuSearch, LuCalculator, LuBuilding2, LuTrendingUp, LuVideo, LuAccessibility, LuHand,
+  LuGlobe, LuSearch, LuCalculator, LuBuilding2, LuTrendingUp, LuVideo, LuAccessibility, LuHand,
 } from "react-icons/lu";
 
 export const GitHub = () => <FaGithub size={22} aria-hidden="true" />;
@@ -17,6 +17,7 @@ export const Mail = () => <LuMail size={22} aria-hidden="true" />;
 export const Sun = () => <LuSun size={18} aria-hidden="true" />;
 export const Moon = () => <LuMoon size={18} aria-hidden="true" />;
 export const Lock = ({ className = "" }) => <LuLock size={14} className={className} aria-hidden="true" />;
+export const Globe = () => <LuGlobe size={14} aria-hidden="true" />;
 export const Download = () => <LuDownload size={16} aria-hidden="true" />;
 export const Arrow = ({ className = "" }) => <LuArrowUpRight size={16} className={className} aria-hidden="true" />;
 

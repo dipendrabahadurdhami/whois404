@@ -1,5 +1,5 @@
 import Section, { Tags } from "./Section";
-import { Arrow, Lock, TechIcon } from "./icons";
+import { Arrow, Lock, Globe, TechIcon } from "./icons";
 import { about, experience, projects, skills, education, profile } from "../data";
 
 const hoverList = "group/list";
@@ -75,11 +75,13 @@ export function Projects() {
                       ))}
                     </ul>
                   )}
-                  {!p.url && (
-                    <p className="mt-2 inline-flex items-center gap-1.5 font-mono text-xs text-muted">
-                      <Lock /> Private project. Source and demo available on request.
-                    </p>
-                  )}
+                  <p className="mt-3 flex items-center gap-1.5 font-mono text-xs text-muted">
+                    {p.url ? (
+                      <><Globe /> Live site · {p.url.replace("https://", "")}</>
+                    ) : (
+                      <><Lock /> Private project. Source and demo on request.</>
+                    )}
+                  </p>
                   <Tags items={p.tech} />
                 </div>
               </Tag>
