@@ -7,11 +7,11 @@ export default {
     extend: {
       colors: {
         bg: token("bg"),
-        card: token("card"),
         fg: token("fg"),
-        muted: token("muted"),
-        line: token("line"),
+        light: token("light"),
         accent: token("accent"),
+        muted: "rgb(var(--fg) / 0.62)",
+        line: "rgb(var(--fg) / 0.16)",
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],

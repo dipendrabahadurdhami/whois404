@@ -104,7 +104,7 @@ export default function Sidebar() {
         <a
           href={profile.cv}
           download
-          className="mt-8 inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2 text-sm font-medium text-white transition hover:opacity-90 lg:mt-8"
+          className="mt-8 inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2 text-sm font-medium text-light transition hover:opacity-90 lg:mt-8"
         >
           <Download /> Download CV
         </a>

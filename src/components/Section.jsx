@@ -15,8 +15,8 @@ export function Tags({ items }) {
   return (
     <ul className="mt-3 flex flex-wrap gap-2">
       {items.map((t) => (
-        <li key={t} className="inline-flex items-center gap-1.5 rounded-md border border-line px-2.5 py-1 font-mono text-xs text-muted">
-          <TechIcon name={t} />
+        <li key={t} className="inline-flex items-center gap-2 rounded-md border border-line px-3 py-1.5 font-mono text-xs">
+          <span className="text-accent"><TechIcon name={t} size={16} /></span>
           {t}
         </li>
       ))}

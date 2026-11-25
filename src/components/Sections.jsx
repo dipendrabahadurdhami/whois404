@@ -98,7 +98,7 @@ export function Skills() {
               <ul className="flex flex-wrap gap-2">
                 {s.items.map((i) => (
                   <li key={i} className="inline-flex items-center gap-2 rounded-md border border-line px-3 py-1.5 text-sm">
-                    <TechIcon name={i} size={16} />
+                    <span className="text-accent"><TechIcon name={i} size={18} /></span>
                     {i}
                   </li>
                 ))}
