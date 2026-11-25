@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 255 255 255;
+  --card: 246 246 248;
+  --fg: 24 24 27;
+  --muted: 100 100 112;
+  --line: 228 228 232;
+  --accent: 214 31 56;
+}
+.dark {
+  --bg: 11 11 14;
+  --card: 20 20 25;
+  --fg: 236 236 240;
+  --muted: 146 146 158;
+  --line: 38 38 46;
+  --accent: 233 43 64;
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-bg font-sans text-fg antialiased; transition: background-color .3s; }
+::selection { background: rgb(var(--accent) / .35); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}
