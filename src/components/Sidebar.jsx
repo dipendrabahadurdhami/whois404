@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { profile } from "../data";
-import { GitHub, LinkedIn, YouTube, Sun, Moon, Download } from "./icons";
+import { GitHub, LinkedIn, YouTube, Download } from "./icons";
 import ContactMenu from "./ContactMenu";
 import FitText from "./FitText";
-import { useDark, toggleTheme, setTheme, savedTheme, autoTheme } from "../theme";
 
 const nav = [
   ["about", "About"],
@@ -25,29 +24,6 @@ function useActive(ids) {
     return () => io.disconnect();
   }, []);
   return active;
-}
-
-function Theme() {
-  const dark = useDark();
-
-  useEffect(() => {
-    // follow the visitor's clock until they choose a theme themselves
-    const id = setInterval(() => {
-      if (!savedTheme()) setTheme(autoTheme(), false);
-    }, 60000);
-    return () => clearInterval(id);
-  }, []);
-
-  return (
-    <button
-      onClick={toggleTheme}
-      aria-label={`Switch to ${dark ? "light" : "dark"} theme`}
-      title={`Switch to ${dark ? "light" : "dark"} theme`}
-      className="block text-fg transition hover:scale-110"
-    >
-      {dark ? <Moon /> : <Sun />}
-    </button>
-  );
 }
 
 export default function Sidebar() {
@@ -110,7 +86,6 @@ export default function Sidebar() {
         ))}
         <li><ContactMenu type="email" /></li>
         <li><ContactMenu type="phone" /></li>
-        <li><Theme /></li>
       </ul>
       </div>
     </header>

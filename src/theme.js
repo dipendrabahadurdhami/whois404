@@ -28,3 +28,11 @@ const subscribe = (l) => {
   return () => listeners.delete(l);
 };
 export const useDark = () => useSyncExternalStore(subscribe, isDark);
+
+// Until the visitor picks a theme, follow their clock while the page stays open.
+export function watchAutoTheme() {
+  const id = setInterval(() => {
+    if (!savedTheme()) setTheme(autoTheme(), false);
+  }, 60000);
+  return () => clearInterval(id);
+}

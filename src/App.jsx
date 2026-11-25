@@ -1,8 +1,12 @@
 import Sidebar from "./components/Sidebar";
+import { useEffect } from "react";
 import Banner from "./components/Banner";
+import { watchAutoTheme } from "./theme";
 import { About, Experience, Projects, Skills, Education, Contact } from "./components/Sections";
 
 export default function App() {
+  useEffect(() => watchAutoTheme(), []);
+
   return (
     <>
       <a href="#about" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-accent focus:px-4 focus:py-2 focus:text-light">

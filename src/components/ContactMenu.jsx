@@ -68,7 +68,7 @@ export default function ContactMenu({ type }) {
         title={value}
         className="block text-muted transition hover:text-accent"
       >
-        <Icon size={22} aria-hidden="true" />
+        <Icon size={24} aria-hidden="true" />
       </button>
       {open && (
         <div role="menu" className="absolute bottom-full left-0 z-30 mb-3 w-72 overflow-hidden rounded-lg border border-line bg-bg shadow-xl">
