@@ -71,8 +71,8 @@ export default function Sidebar() {
   ];
 
   return (
-    <header className="lg:sticky lg:top-0 lg:h-screen lg:w-[46%] lg:py-16">
-      <div className="w-fit max-w-full lg:flex lg:h-full lg:flex-col lg:justify-between lg:gap-6">
+    <header className="[container-type:inline-size] lg:sticky lg:top-0 lg:h-screen lg:w-[44%] lg:py-16">
+      <div className="w-full lg:flex lg:h-full lg:flex-col lg:justify-between lg:gap-6">
       <div>
         <img
           src={profile.photo}
@@ -81,10 +81,10 @@ export default function Sidebar() {
           height="80"
           className="mb-5 h-20 w-20 rounded-full object-cover ring-2 ring-line"
         />
-        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+        <h1 className="text-[12.6cqw] font-semibold leading-none tracking-tight">
           <a href="#"><FitText>{profile.name}</FitText></a>
         </h1>
-        <h2 className="mt-3 text-lg font-medium sm:text-xl">{profile.title}</h2>
+        <h2 className="mt-3 text-[5.1cqw] font-medium leading-tight"><FitText>{profile.title}</FitText></h2>
         <p className="justify-text no-hyphens mt-4 w-0 min-w-full leading-relaxed text-muted">{profile.tagline}</p>
         <p className="mt-4 font-mono text-xs text-muted">{profile.location}</p>
 

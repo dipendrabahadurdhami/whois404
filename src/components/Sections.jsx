@@ -143,13 +143,14 @@ export function Education() {
 
 export function Footer() {
   return (
-    <footer className="max-w-md pb-16 text-sm text-muted lg:pb-24">
-      <p className="mb-2">
-        Want to work together?{" "}
+    <footer className="space-y-1 pb-16 text-sm text-muted lg:pb-24">
+      <p className="font-medium text-fg">Want to work together?</p>
+      <p>
         <a href={`mailto:${profile.email}`} className="text-accent hover:underline">{profile.email}</a>
-        {" "}or {profile.phone}.
+        <span className="px-2">·</span>
+        <a href={`tel:${profile.phone.replace(/\s/g, "")}`} className="hover:text-accent">{profile.phone}</a>
       </p>
-      <p>Designed and built by Dipendra Dhami with React and Tailwind CSS.</p>
+      <p className="pt-3 font-mono text-xs">Designed and built by Dipendra Dhami with React and Tailwind CSS.</p>
     </footer>
   );
 }
