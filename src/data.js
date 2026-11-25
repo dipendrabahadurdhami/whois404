@@ -12,7 +12,7 @@ export const profile = {
   cv: `${base}Dipendra_Dhami_CV.pdf`,
   links: {
     github: "https://github.com/dipendrabahadurdhami",
-    linkedin: "https://linkedin.com/in/dipendra-bahadur-dhami",
+    linkedin: "https://www.linkedin.com/in/dipendradhami77/",
     youtube: "https://www.youtube.com/@dipendradhami77",
   },
 };
