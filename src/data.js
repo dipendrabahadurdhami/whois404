@@ -9,9 +9,6 @@ export const profile = {
   email: "dipendrabahadurdhami77@gmail.com",
   phone: "+977 9746871143",
   photo: `${base}photo.jpg`,
-  banner: `${base}banner.webp`,
-  bannerLight: `${base}banner-code-light.svg`,
-  bannerCodeDark: `${base}banner-code-dark.svg`,
   cv: `${base}Dipendra_Dhami_CV.pdf`,
   links: {
     github: "https://github.com/dipendrabahadurdhami",

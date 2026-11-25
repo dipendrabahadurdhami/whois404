@@ -20,6 +20,9 @@ html { scroll-behavior: smooth; }
 body { @apply bg-bg font-sans text-fg antialiased; transition: background-color .3s; }
 ::selection { background: rgb(var(--accent)); color: rgb(var(--light)); }
 
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.spin-slow { animation: spin-slow 90s linear infinite; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; animation: none !important; }

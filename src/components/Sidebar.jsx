@@ -3,6 +3,7 @@ import { profile } from "../data";
 import { GitHub, LinkedIn, YouTube, Sun, Moon, Download } from "./icons";
 import ContactMenu from "./ContactMenu";
 import FitText from "./FitText";
+import { useDark, toggleTheme, setTheme, savedTheme, autoTheme } from "../theme";
 
 const nav = [
   ["about", "About"],
@@ -25,39 +26,25 @@ function useActive(ids) {
   return active;
 }
 
-// Visitor's local time decides the default: light 06:00-17:59, dark otherwise.
-const autoTheme = () => {
-  const h = new Date().getHours();
-  return h >= 6 && h < 18 ? "light" : "dark";
-};
-const saved = () => {
-  try { return localStorage.getItem("theme"); } catch (e) { return null; }
-};
-const apply = (t) => document.documentElement.classList.toggle("dark", t === "dark");
-
 function Theme() {
-  const [dark, setDark] = useState(() => document.documentElement.classList.contains("dark"));
+  const dark = useDark();
 
   useEffect(() => {
-    const tick = () => {
-      if (saved()) return;
-      const t = autoTheme();
-      apply(t);
-      setDark(t === "dark");
-    };
-    const id = setInterval(tick, 60000);
+    // follow the visitor's clock until they choose a theme themselves
+    const id = setInterval(() => {
+      if (!savedTheme()) setTheme(autoTheme(), false);
+    }, 60000);
     return () => clearInterval(id);
   }, []);
 
-  const toggle = () => {
-    const next = dark ? "light" : "dark";
-    apply(next);
-    try { localStorage.setItem("theme", next); } catch (e) {}
-    setDark(!dark);
-  };
   return (
-    <button onClick={toggle} aria-label="Switch between light and dark theme" title="Switch theme" className="text-muted transition hover:text-accent">
-      {dark ? <Sun /> : <Moon />}
+    <button
+      onClick={toggleTheme}
+      aria-label={`Switch to ${dark ? "light" : "dark"} theme`}
+      title={`Switch to ${dark ? "light" : "dark"} theme`}
+      className="block text-fg transition hover:scale-110"
+    >
+      {dark ? <Moon /> : <Sun />}
     </button>
   );
 }
