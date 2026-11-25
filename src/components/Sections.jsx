@@ -102,9 +102,9 @@ export function Skills() {
           <div key={s.group} className="grid gap-2 sm:grid-cols-8 sm:gap-6">
             <dt className="mt-1 font-mono text-xs uppercase tracking-wide text-muted sm:col-span-2">{s.group}</dt>
             <dd className="sm:col-span-6">
-              <ul className="flex flex-wrap gap-2">
+              <ul className="grid grid-cols-2 gap-2">
                 {s.items.map((i) => (
-                  <li key={i} className="inline-flex items-center gap-2 rounded-md border border-line px-3 py-1.5 text-sm">
+                  <li key={i} className="flex items-center gap-2 rounded-md border border-line px-2.5 py-2.5 text-[13px] leading-tight sm:gap-2.5 sm:px-3 sm:text-sm [&:nth-child(odd):last-child]:col-span-2">
                     <span className="text-accent"><TechIcon name={i} size={18} /></span>
                     {i}
                   </li>
