@@ -78,6 +78,18 @@ export const projects = [
     tech: ["Search & filters", "Maps", "Calculators", "Agency listings"],
   },
   {
+    name: "Foreign Investment Nepal",
+    url: "https://foreigninvestmentnepal.com",
+    kind: "Information portal",
+    text: "An investor-facing platform that presents Nepal's investable landscape to qualified foreign investors and partners.",
+    highlights: [
+      "Sector pages for hydropower, IT, tourism, manufacturing, agriculture, healthcare, mining and more.",
+      "A step-by-step guide to the FITTA 2019 process, from application to approval and company registration.",
+      "Headline figures, downloadable FDI reports, a blog and a form to request an investor briefing.",
+    ],
+    tech: ["Investment guide", "FDI reports", "Sector pages", "Briefing request"],
+  },
+  {
     name: "eRastriya",
     url: "https://erastriya.com",
     kind: "News portal",

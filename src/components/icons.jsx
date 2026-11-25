@@ -6,7 +6,7 @@ import {
 import {
   LuMail, LuSun, LuMoon, LuArrowUpRight, LuLock, LuLayers, LuUsers, LuGitPullRequest,
   LuRocket, LuShieldCheck, LuDatabase, LuWorkflow,
-  LuBrain, LuClapperboard, LuBraces, LuDownload, LuMonitor, LuReceiptText, LuMapPin, LuTabletSmartphone, LuLanguages, LuMessageCircle,
+  LuBrain, LuClapperboard, LuBraces, LuDownload, LuBookOpen, LuFileText, LuLayoutGrid, LuSend, LuMonitor, LuReceiptText, LuMapPin, LuTabletSmartphone, LuLanguages, LuMessageCircle,
   LuGlobe, LuSearch, LuCalculator, LuBuilding2, LuTrendingUp, LuVideo, LuAccessibility, LuHand,
 } from "react-icons/lu";
 
@@ -31,7 +31,8 @@ const map = {
   "Machine learning": LuBrain, "Maps": LuMapPin, "Nepali & English": LuLanguages, "Google Sign-In": SiGoogle, "Live chat": LuMessageCircle,
   "SEO": LuSearch, "Search & filters": LuSearch, "Calculators": LuCalculator, "Agency listings": LuBuilding2,
   "Market data": LuTrendingUp, "Video news": LuVideo, "Accessibility": LuAccessibility, "Sign language": LuHand,
-  "Team project": LuUsers, "Video editing": LuClapperboard,
+  "Team project": LuUsers, "Investment guide": LuBookOpen, "FDI reports": LuFileText,
+  "Sector pages": LuLayoutGrid, "Briefing request": LuSend, "Video editing": LuClapperboard,
 };
 
 export function TechIcon({ name, size = 14 }) {
